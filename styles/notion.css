@@ -211,7 +211,7 @@ pre[class*='language-'] {
 .nobelium-toggle-empty > summary {
   @apply cursor-default;
 }
-
+/*
 .nobelium-toggle-triangle {
   @apply flex-none w-7 text-center;
   line-height: inherit;
@@ -229,7 +229,7 @@ pre[class*='language-'] {
 .nobelium-toggle[open]:not(.nobelium-toggle-empty) > * > .nobelium-toggle-triangle svg {
   transform: rotateZ(180deg);
 }
-
+*/
 .nobelium-toggle-empty > * > .nobelium-toggle-triangle svg {
   @apply opacity-50;
 }

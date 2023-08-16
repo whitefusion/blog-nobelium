@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 patchedDependencies:
   notion-utils@6.16.0:
     hash: jbbxfh6oczxvsqepw4jd23wxpm
@@ -42,6 +46,9 @@ dependencies:
   prop-types:
     specifier: ^15.8.1
     version: 15.8.1
+  ramda:
+    specifier: ^0.29.0
+    version: 0.29.0
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -63,6 +70,9 @@ dependencies:
   use-ackee:
     specifier: ^3.0.1
     version: 3.0.1(react@18.2.0)
+  zustand:
+    specifier: ^4.4.0
+    version: 4.4.0(react@18.2.0)
 
 devDependencies:
   autoprefixer:
@@ -3339,6 +3349,10 @@ packages:
     resolution: {integrity: sha512-WuyALRjWPDGtt/wzJiadO5AXY+8hZ80hVpe6MyivgraREW751X3SbhRvG3eLKOYN+8VEvqLcf3wdnt44Z4S4SA==}
     engines: {node: '>=10'}
 
+  /ramda@0.29.0:
+    resolution: {integrity: sha512-BBea6L67bYLtdbOqfp8f58fPMqEwx0doL+pAi8TZyp2YWz8R9G8z9x75CZI8W+ftqhFHCpEX2cRnUUXK130iKA==}
+    dev: false
+
   /randombytes@2.1.0:
     resolution: {integrity: sha512-vYl3iOX+4CKUWuxGi9Ukhie6fsqXqS9FE2Zaic4tNFD2N2QQaXOMFbuKK4QmDHC0JO6B1Zp41J0LpT0oR68amQ==}
     dependencies:
@@ -4125,6 +4139,14 @@ packages:
       react: 18.2.0
     dev: false
 
+  /use-sync-external-store@1.2.0(react@18.2.0):
+    resolution: {integrity: sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.2.0
+    dev: false
+
   /util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
     dev: true
@@ -4268,3 +4290,22 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
+
+  /zustand@4.4.0(react@18.2.0):
+    resolution: {integrity: sha512-2dq6wq4dSxbiPTamGar0NlIG/av0wpyWZJGeQYtUOLegIUvhM2Bf86ekPlmgpUtS5uR7HyetSiktYrGsdsyZgQ==}
+    engines: {node: '>=12.7.0'}
+    peerDependencies:
+      '@types/react': '>=16.8'
+      immer: '>=9.0'
+      react: '>=16.8'
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      immer:
+        optional: true
+      react:
+        optional: true
+    dependencies:
+      react: 18.2.0
+      use-sync-external-store: 1.2.0(react@18.2.0)
+    dev: false
