@@ -25,7 +25,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "model/globalStore.js", "pages/page/[page].js", "pages/index.js"  ],
+, "pages/page/[page].js", "pages/index.js"  ],
   "exclude": [
     "node_modules"
   ]

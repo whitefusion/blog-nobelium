@@ -34,10 +34,7 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-  useGlobalStore.setState({ loading: true });
-
   const posts = await getAllPosts({ includePages: false });
-  useGlobalStore.setState({ loading: false });
 
   const totalPosts = posts.length;
   const totalPages = Math.ceil(totalPosts / config.postsPerPage);

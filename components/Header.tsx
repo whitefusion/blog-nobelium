@@ -10,7 +10,6 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useConfig } from "@/lib/config";
 import { useLocale } from "@/lib/locale";
-import { useGlobalStore } from "@/model/globalStore";
 import useTheme from "@/lib/theme";
 
 type Link = {
