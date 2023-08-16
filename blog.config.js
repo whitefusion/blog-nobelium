@@ -1,9 +1,9 @@
 const BLOG = {
-  title: "远距离心动",
+  title: "长卷三两行",
   author: "xbai",
   email: "xinbai1992@163.com",
   link: "https://nobelium.vercel.app",
-  description: "keep distance keep charming",
+  description: "",
   lang: "en-US", // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES']
   timezone: "Asia/Shanghai", // Your Notion posts' date will be interpreted as this timezone. See https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for all options.
   appearance: "auto", // ['light', 'dark', 'auto'],
@@ -13,7 +13,7 @@ const BLOG = {
   path: "", // leave this empty unless you want to deploy Nobelium in a folder
   since: 2021, // If leave this empty, current year will be used.
   postsPerPage: 7,
-  sortByDate: false,
+  sortByDate: true,
   showAbout: true,
   showArchive: true,
   autoCollapsedNavBar: false, // The automatically collapsed navigation bar

@@ -1,5 +1,4 @@
 import { useConfig } from "@/lib/config";
-import Vercel from "@/components/Vercel";
 const Footer = ({ fullWidth }) => {
   const BLOG = useConfig();
 
@@ -22,7 +21,6 @@ const Footer = ({ fullWidth }) => {
             {" "}
             沪ICP备20011311号-1{" "}
           </a>
-          <Vercel />
         </div>
       </div>
     </div>
