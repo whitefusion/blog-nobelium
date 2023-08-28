@@ -20,8 +20,16 @@ const BLOG = {
   ogImageGenerateURL: "https://og-image-craigary.vercel.app", // The link to generate OG image, don't end with a slash
   socialLink: "",
   seo: {
-    keywords: ["Blog", "Website", "Notion"],
-    googleSiteVerification: "", // Remove the value or replace it with your own google site verification code
+    keywords: [
+      "Blog",
+      "Website",
+      "web3",
+      "frontend",
+      "前端",
+      "nextjs",
+      "interview",
+    ],
+    googleSiteVerification: "k2yc0E3wv0ZsdLWS-wB23rc96KO6rmCUwPTLylTBINs", // Remove the value or replace it with your own google site verification code
   },
   notionPageId: process.env.NOTION_PAGE_ID, // DO NOT CHANGE THIS！！！
   notionAccessToken: process.env.NOTION_ACCESS_TOKEN, // Useful if you prefer not to make your database public
@@ -51,7 +59,7 @@ const BLOG = {
       repo: "",
     },
     cusdisConfig: {
-      appId: "", // data-app-id
+      appId: "d651b181-d09d-4be3-857a-34e1d6754da0", // data-app-id
       host: "https://cusdis.com", // data-host, change this if you're using self-hosted version
       scriptSrc: "https://cusdis.com/js/cusdis.es.js", // change this if you're using self-hosted version
     },
