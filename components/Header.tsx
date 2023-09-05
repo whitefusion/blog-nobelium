@@ -188,9 +188,7 @@ const HeaderName = forwardRef<Ref, HeaderNameProps>(function _HeaderName(
       )}
       <span className="row-start-1 col-start-1">
         <span className="site-title">{siteTitle}</span>
-        <span className="site-description font-normal">
-          , {siteDescription}
-        </span>
+        <span className="site-description font-normal"></span>
       </span>
     </p>
   );

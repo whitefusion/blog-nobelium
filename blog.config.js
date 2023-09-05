@@ -3,7 +3,8 @@ const BLOG = {
   author: "xbai",
   email: "xinbai1992@163.com",
   link: "https://nobelium.vercel.app",
-  description: "",
+  description:
+    "个人博客网站。会发布前端_web3_区块链_算法等计算机技术知识，也会有菜谱_旅游见闻_爱好等生活知识，还会有个人成长的心路历程以及职业发展的文章",
   lang: "en-US", // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES']
   timezone: "Asia/Shanghai", // Your Notion posts' date will be interpreted as this timezone. See https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for all options.
   appearance: "auto", // ['light', 'dark', 'auto'],
@@ -28,6 +29,11 @@ const BLOG = {
       "前端",
       "nextjs",
       "interview",
+      "blockchain",
+      "algorithm",
+      "算法",
+      "区块链",
+      "面试",
     ],
     googleSiteVerification: "k2yc0E3wv0ZsdLWS-wB23rc96KO6rmCUwPTLylTBINs", // Remove the value or replace it with your own google site verification code
   },
