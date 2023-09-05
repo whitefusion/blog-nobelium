@@ -1,0 +1,25 @@
+.bgDeco {
+  z-index: -1;
+  .bgLeft {
+    position: fixed;
+    left: calc(50vw - 32rem);
+    top: 15vh;
+    width: 17rem;
+    height: 20rem;
+    border-radius: 8rem;
+    background: radial-gradient(42.67% 46.54% at 50% 49.86%, #FBAB90 0%, rgba(252, 187, 161, 0.47) 0%, #FFEFDA 100%);
+    box-shadow: 0px 50px 120px -50px #FDC5AD;
+  }
+
+  .bgRight {
+    position: fixed;
+    right: calc(50vw - 30rem);
+    bottom: 10vh;
+    width: 12rem;
+    height: 15rem;
+    border-radius: 6rem 6rem 12rem 6rem;
+    background: radial-gradient(47.84% 45.83% at 48.03% 50.24%, rgba(159, 138, 241, 0.40) 0%, #EAD6FF 100%);
+    box-shadow: 0px 50px 120px -50px #705DBB;
+  }
+
+}

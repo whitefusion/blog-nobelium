@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import BgDeco from "@/components/BgDeco/index";
 import { useConfig } from "@/lib/config";
 import Head from "next/head";
 import PropTypes from "prop-types";
@@ -64,7 +65,7 @@ const Container = ({ children, layout, fullWidth, ...customMeta }) => {
       <div
         className={`wrapper ${
           BLOG.font === "serif" ? "font-serif" : "font-sans"
-        }`}
+        } relative`}
       >
         <Header
           navBarTitle={layout === "blog" ? meta.title : null}
@@ -82,6 +83,7 @@ const Container = ({ children, layout, fullWidth, ...customMeta }) => {
           {children}
         </main>
         <Footer fullWidth={fullWidth} />
+        <BgDeco />
       </div>
     </div>
   );
