@@ -8,11 +8,20 @@ import { createHash } from "crypto";
 import Container from "@/components/Container";
 import Post from "@/components/Post";
 import Comments from "@/components/Comments";
+import { useCallback } from "react";
 
 export default function BlogPost({ post, blockMap, emailHash }) {
   const router = useRouter();
   const BLOG = useConfig();
   const locale = useLocale();
+  const getShowBgDeco = useCallback(() => {
+    switch (post?.slug) {
+      case "about":
+        return true;
+    }
+
+    return false;
+  }, [post]);
 
   // TODO: It would be better to render something
   if (router.isFallback) return null;
@@ -28,6 +37,7 @@ export default function BlogPost({ post, blockMap, emailHash }) {
       // date={new Date(post.publishedAt).toISOString()}
       type="article"
       fullWidth={fullWidth}
+      showBgDeco={getShowBgDeco()}
     >
       <Post
         post={post}

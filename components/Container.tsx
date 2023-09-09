@@ -1,20 +1,47 @@
+import { useCallback, useMemo } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import BgDeco from "@/components/BgDeco/index";
+import BgDeco from "./BgDeco";
 import { useConfig } from "@/lib/config";
 import Head from "next/head";
 import PropTypes from "prop-types";
 import cn from "classnames";
 
-const Container = ({ children, layout, fullWidth, ...customMeta }) => {
+interface ContainerProps {
+  [x: string]: any;
+  layout: string;
+  fullWidth: string;
+  showBgDeco: boolean;
+}
+
+const Container = ({
+  children,
+  layout,
+  fullWidth,
+  showBgDeco = true,
+  ...customMeta
+}: ContainerProps | null) => {
   const BLOG = useConfig();
 
   const url = BLOG.path.length ? `${BLOG.link}/${BLOG.path}` : BLOG.link;
-  const meta = {
-    title: BLOG.title,
-    type: "website",
-    ...customMeta,
-  };
+  const meta: { title: any; type: string; [x: string]: string } = useMemo(
+    () => ({
+      title: BLOG.title,
+      type: "website",
+      ...customMeta,
+    }),
+    [BLOG.title, customMeta]
+  );
+
+  const getShowBgType = useCallback(() => {
+    switch (meta?.slug) {
+      case "about":
+        return "pallas";
+    }
+
+    return "default";
+  }, [meta]);
+
   return (
     <div>
       <Head>
@@ -83,7 +110,7 @@ const Container = ({ children, layout, fullWidth, ...customMeta }) => {
           {children}
         </main>
         <Footer fullWidth={fullWidth} />
-        <BgDeco />
+        {showBgDeco ? <BgDeco decoType={getShowBgType()} /> : null}
       </div>
     </div>
   );

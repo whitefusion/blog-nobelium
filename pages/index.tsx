@@ -1,5 +1,4 @@
 import { clientConfig } from "../lib/server/config";
-
 import Container from "../components/Container";
 import BlogPost from "../components/BlogPost";
 import Pagination from "../components/Pagination";
