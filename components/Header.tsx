@@ -174,7 +174,7 @@ const HeaderIconWithLoading = ({ iconStyle }) => {
 };
 
 const HeaderName = forwardRef<Ref, HeaderNameProps>(function _HeaderName(
-  { siteTitle, siteDescription, postTitle, onClick },
+  { siteTitle, postTitle, onClick },
   ref
 ) {
   return (
