@@ -9,9 +9,9 @@ import cn from "classnames";
 
 interface ContainerProps {
   [x: string]: any;
-  layout: string;
-  fullWidth: string;
-  showBgDeco: boolean;
+  layout?: string;
+  fullWidth?: string;
+  showBgDeco?: boolean;
 }
 
 const Container = ({
