@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import Link from "next/link";
 import Image from "next/image";
 import cn from "classnames";
 import { useConfig } from "@/lib/config";
@@ -21,9 +22,9 @@ import TableOfContents from "@/components/TableOfContents";
  */
 export default function Post(props) {
   const BLOG = useConfig();
-  const { post, blockMap, emailHash, fullWidth = false } = props;
+  const { post, blockMap, emailHash, fullWidth = false, relevantReads } = props;
   const { dark } = useTheme();
-
+  console.log("post: ", post);
   return (
     <article
       className={cn("flex flex-col", fullWidth ? "md:px-24" : "items-center")}
@@ -79,6 +80,33 @@ export default function Post(props) {
             fullPage={false}
             darkMode={dark}
           />
+          {relevantReads?.length ? (
+            <div>
+              <p className="text-xl flex flex-row">
+                <svg
+                  viewBox="0 0 1024 1024"
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  p-id="1494"
+                  width="28"
+                  height="28"
+                >
+                  <path
+                    d="M810.656 384L864 266.656l117.344-53.344L864 159.968l-53.344-117.344-53.344 117.344-117.344 53.344 117.344 53.344L810.656 384z m-320 21.344L384 170.688l-106.656 234.656L42.688 512l234.656 106.656L384 853.312l106.656-234.656L725.312 512l-234.656-106.656z m320 234.656l-53.344 117.344-117.344 53.344 117.344 53.344 53.344 117.344L864 864.032l117.344-53.344L864 757.344 810.656 640z"
+                    p-id="1495"
+                  ></path>
+                </svg>
+                <span>相关阅读</span>
+              </p>
+              <ul role="list" className="list-disc ms-8 mt-4">
+                {(relevantReads || []).map((read) => (
+                  <li key={read.slug} className="hover:underline leading-loose">
+                    <Link href={`${BLOG.path}/${read.slug}`}>{read.title}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
         </div>
         <div
           className={cn(
@@ -103,5 +131,6 @@ Post.propTypes = {
   post: PropTypes.object.isRequired,
   blockMap: PropTypes.object.isRequired,
   emailHash: PropTypes.string.isRequired,
+  relevantReads: PropTypes.array,
   fullWidth: PropTypes.bool,
 };

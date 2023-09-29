@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useConfig } from "@/lib/config";
 import FormattedDate from "@/components/FormattedDate";
 
-const BlogPost = ({ post }) => {
+const BlogPostItem = ({ post }) => {
   const BLOG = useConfig();
 
   return (
@@ -26,4 +26,4 @@ const BlogPost = ({ post }) => {
   );
 };
 
-export default BlogPost;
+export default BlogPostItem;
