@@ -10,7 +10,7 @@ import Post from "@/components/Post";
 import Comments from "@/components/Comments";
 import { useCallback } from "react";
 
-export default function BlogPost({ post, blockMap, emailHash }) {
+export default function BlogPost({ post, blockMap, emailHash, relevantReads }) {
   const router = useRouter();
   const BLOG = useConfig();
   const locale = useLocale();
@@ -43,6 +43,7 @@ export default function BlogPost({ post, blockMap, emailHash }) {
         post={post}
         blockMap={blockMap}
         emailHash={emailHash}
+        relevantReads={relevantReads}
         fullWidth={fullWidth}
       />
       {/* Back and Top */}
@@ -90,6 +91,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params: { slug } }) {
   const posts = await getAllPosts({ includePages: true });
+
   const post = posts.find((t) => t.slug === slug);
 
   if (!post) return { notFound: true };
@@ -101,8 +103,23 @@ export async function getStaticProps({ params: { slug } }) {
     .trim()
     .toLowerCase();
 
+  // 找到有当前帖子的第一个标签的其他帖子作为推荐
+  const relevantReads = findRelevantPosts(post, posts);
+
   return {
-    props: { post, blockMap, emailHash },
+    props: { post, blockMap, emailHash, relevantReads },
     revalidate: 1,
   };
 }
+
+const findRelevantPosts = (curr, posts) => {
+  const { tags, slug } = curr;
+  const firstTag = tags?.[0];
+
+  return posts
+    .filter((p) => {
+      const hasTag = p?.tags?.[0] === firstTag;
+      return hasTag && p?.slug !== slug;
+    })
+    .slice(0, 5);
+};
