@@ -1,8 +1,8 @@
 const BLOG = {
   title: "长卷三两行",
-  author: "xbai",
+  author: "bai xin",
   email: "xinbai1992@163.com",
-  link: "https://nobelium.vercel.app",
+  link: "https://hundredstar.cc/",
   description:
     "个人博客网站。会发布前端_web3_区块链_算法等计算机技术知识，也会有菜谱_旅游见闻_爱好等生活知识，还会有个人成长的心路历程以及职业发展的文章",
   lang: "en-US", // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES']
